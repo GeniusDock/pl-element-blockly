@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="helper.js"></script>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <link rel="import" href="../gs-element-blockly.html">
+    <style>
+      td { /*This is only for testing code with pragmas, for the table below*/
+        border: 1px solid black;
+        font-family:courier;
+        font-size: 12;
+        word-wrap: break-word;         /* All browsers since IE 5.5+ */
+        overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+      }
+    </style>
+  </head>
+  <body>
+    <gs-element-blockly id="gseb"></gs-element-blockly>
+    <script>
+			WCT.loadSuites(['suiteGeneral.js','suiteCommandsGenerators.js', 'suiteExpressionsGenerators.js', 'suitePragmaRegion.js']);
+    </script>
+    <!--<table id="testOutput"><tr><td>Nombre</td><td>Código limpio</td><td>Con pragmas</td></tr></table> Uncomment for printing pragmas of tests-->
+  </body>
+</html>
