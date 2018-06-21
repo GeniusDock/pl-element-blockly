@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["info@gobstones.org"]
 
   spec.summary       = "Gobstones Blockly"
-  spec.homepage      = "https://github.com/Program-AR/gs-element-blockly"
+  spec.homepage      = "https://github.com/Program-AR/pl-element-blockly"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + Dir["app/**/*"] + ["Rakefile", "README.md"]

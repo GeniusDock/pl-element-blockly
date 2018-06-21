@@ -1,5 +1,5 @@
 {
-  "name": "gs-element-blockly",
+  "name": "pl-element-blockly",
   "version": "1.0.0",
   "description": "Element providing Blockly interface for Gobstones Web",
   "main": "index.js",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/program-ar/gs-element-blockly.git"
+    "url": "git+https://github.com/program-ar/pl-element-blockly.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/program-ar/gs-element-blockly/issues"
+    "url": "https://github.com/program-ar/pl-element-blockly/issues"
   },
-  "homepage": "https://github.com/program-ar/gs-element-blockly#readme"
+  "homepage": "https://github.com/program-ar/pl-element-blockly#readme"
 }

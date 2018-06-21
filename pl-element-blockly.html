@@ -14,19 +14,19 @@ An element providing a solution to no problem in particular.
 
 Example:
 
-    <gs-element-blockly></gs-element-blockly>
+    <pl-element-blockly></pl-element-blockly>
 
 Example:
 
-    <gs-element-blockly>
-      <h2>Hello gs-element-blockly</h2>
-    </gs-element-blockly>
+    <pl-element-blockly>
+      <h2>Hello pl-element-blockly</h2>
+    </pl-element-blockly>
 
 @demo demo/index.html
 @hero hero.svg
 -->
 
-<dom-module id="gs-element-blockly">
+<dom-module id="pl-element-blockly">
   <template>
     <style>
     </style>
@@ -130,7 +130,7 @@ Example:
     const BLOCKLY_PRIMITIVE_FUNCTIONS = "Funciones primitivas";
 
     Polymer({
-      is: 'gs-element-blockly',
+      is: 'pl-element-blockly',
 
       properties: {
         /*
@@ -166,7 +166,7 @@ Example:
          * }
          * ```
          *
-         * Los IDs de los bloques a utilizar pueden consultarse [en la wiki](https://github.com/Program-AR/gs-element-blockly/wiki/Block-IDs-for-toolbox)
+         * Los IDs de los bloques a utilizar pueden consultarse [en la wiki](https://github.com/Program-AR/pl-element-blockly/wiki/Block-IDs-for-toolbox)
          *
          * Nota: Los bloques de primitiveProcedures siempre aparecen en el toolbox, aunque no figuren
          * en esta propiedad.
@@ -851,10 +851,10 @@ Example:
           }
 				});
         var _this = this;
-        this.workspace.addChangeListener(function (a, b, c) {
-          Blockly.Events.disableOrphans(a, b, c);
-          _this._onBlocklyWorkspaceUpdate();
-        });
+       // this.workspace.addChangeListener(function (a, b, c) {
+       //   Blockly.Events.disableOrphans(a, b, c);
+       //   _this._onBlocklyWorkspaceUpdate();
+       // });
         this.resetWorkspace()
         this._onresize();
         if(window.jQuery !== undefined) {

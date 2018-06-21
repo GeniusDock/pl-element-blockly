@@ -11,8 +11,8 @@ namespace :wrapper do
     # readme
     cp_r '../README.md', 'README.md'
 
-    #  gs-element-blockly
-    cp_r '../bower_components/.tmp/gs-element-blockly.html', 'app/assets/htmls'
+    #  pl-element-blockly
+    cp_r '../bower_components/.tmp/pl-element-blockly.html', 'app/assets/htmls'
 
     # polymer
     cp_r '../bower_components/polymer/polymer.html', 'app/assets/htmls/vendor'

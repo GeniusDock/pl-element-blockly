@@ -12,11 +12,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>gs-element-blockly Demo</title>
+    <title>pl-element-blockly Demo</title>
     <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
 
     <script src="formatXML.js"></script>
-    <link rel="import" href="../gs-element-blockly.html">
+    <link rel="import" href="../pl-element-blockly.html">
   </head>
   <body unresolved>
     <style>
@@ -29,7 +29,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-    <p>An example of <code>&lt;gs-element-blockly&gt;</code>:</p>
+    <p>An example of <code>&lt;pl-element-blockly&gt;</code>:</p>
     <p>
       <div class="colors-panel">
         <button id="copy_colorsbtn">Guardar colores</button>
@@ -86,8 +86,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <input type="text" id="highlighttxt" value='Id del bloque (ver xml)'></input>
       <button id="errorbtn">&lt;- Error del bloque anterior</button>
     </p>
-    <gs-element-blockly media="../../blockly-package/media/">
-    </gs-element-blockly>
+    <pl-element-blockly media="../../blockly-package/media/">
+    </pl-element-blockly>
 
     <p>
       <button id="generatebtn">Generar Código</button>
@@ -101,7 +101,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <p>(Entre paréntesis los ids válidos para ese bloque/categoría)</p>
     <pre id="divValidIds"></pre>
     <script>
-      var blocklyElement = document.querySelector('gs-element-blockly');
+      var blocklyElement = document.querySelector('pl-element-blockly');
 
       document.querySelector('#generatebtn').addEventListener('click', function() {
         document.getElementById("code").innerHTML = blocklyElement.generateCode({withRegions: document.getElementById("withRegions").checked});

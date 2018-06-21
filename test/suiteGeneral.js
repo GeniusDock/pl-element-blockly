@@ -8,7 +8,7 @@ suite('General', function() {
 	});
 
 	test('instantiating the element works', function() {
-		assert.equal(element.is, 'gs-element-blockly');
+		assert.equal(element.is, 'pl-element-blockly');
 	});
 
 	test('No tira el error nextConnection null', function() {

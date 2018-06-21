@@ -1,5 +1,5 @@
 {
-  "name": "gs-element-blockly",
+  "name": "pl-element-blockly",
   "version": "0.16.0",
   "authors": [
     "miguelgarcia",
@@ -12,9 +12,9 @@
     "polymer",
     "gobstones"
   ],
-  "main": "gs-element-blockly.html",
+  "main": "pl-element-blockly.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/Program-AR/gs-element-blockly",
+  "homepage": "https://github.com/Program-AR/pl-element-blockly",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "blockly-package": "0.0.15",

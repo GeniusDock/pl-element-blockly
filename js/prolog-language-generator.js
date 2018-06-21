@@ -60,17 +60,17 @@ Blockly.utils.genUid.soup_ = Blockly.utils.genUid.soup_.replace(/@/g,"a");
  * Importante: los arg son input values, no fields.
  */
 function callGenerator(name, args = [], newLine, order) {
-	return function (block) {
-		var code = name + '(';
-		var sep = '';
-		args.forEach(function (arg) {
-			code += sep + Blockly.PrologLanguage.valueToCode(block, arg,
-				Blockly.PrologLanguage.ORDER_NONE);
-			sep = ', ';
-		});
-		code += newLine ? '),\n' : ').';
-		return order ? [code, order] : code;
-	};
+  return function (block) {
+    var code = name + '(';
+    var sep = '';
+    args.forEach(function (arg) {
+      code += sep + Blockly.PrologLanguage.valueToCode(block, arg,
+        Blockly.PrologLanguage.ORDER_NONE);
+      sep = ', ';
+    });
+    code += newLine ? ')\n' : ')';
+    return order ? [code, order] : code;
+  };
 }
 
 /**
@@ -495,16 +495,17 @@ var makeParameterList = function (block) {
 };
 
 Blockly.PrologLanguage.procedures_defnoreturn = function (block) {
-	var name = formatCallName(block.getFieldValue('NAME'),true);
-	var body = Blockly.PrologLanguage.statementToCode(block, 'STACK');
+  var name = formatCallName(block.getFieldValue('NAME'),false);
+  var body_lines = Blockly.PrologLanguage.statementToCode(block, 'STACK');
+  var body = body_lines.split("\n").slice(0, -1).join(",\n") + '.';
 
-	var code = name + '(' + makeParameterList(block) + ') :- \n' +
-		body + '\n';
+  var code = name + '(' + makeParameterList(block) + ') :- \n' +
+    body + '\n';
 
-	code = Blockly.PrologLanguage.scrub_(block, code);
-	Blockly.PrologLanguage.definitions_[name] = code;
+  code = Blockly.PrologLanguage.scrub_(block, code);
+  Blockly.PrologLanguage.definitions_[name] = code;
 
-	return null;
+  return null;
 };
 
 Blockly.PrologLanguage.procedures_defreturn = function (block) {
