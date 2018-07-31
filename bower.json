@@ -14,11 +14,11 @@
   ],
   "main": "pl-element-blockly.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/Program-AR/pl-element-blockly",
+  "homepage": "https://github.com/GeniusDock/pl-element-blockly",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "blockly-package": "0.0.15",
-    "proceds-blockly": "Program-AR/proceds-blockly#^0.1.12"
+    "proceds-blockly": "GeniusDock/predicates-blockly#^0.1.12"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

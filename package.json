@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/program-ar/pl-element-blockly.git"
+    "url": "git+https://github.com/GeniusDock/pl-element-blockly.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/program-ar/pl-element-blockly/issues"
+    "url": "https://github.com/GeniusDock/pl-element-blockly/issues"
   },
-  "homepage": "https://github.com/program-ar/pl-element-blockly#readme"
+  "homepage": "https://github.com/GeniusDock/pl-element-blockly#readme"
 }
