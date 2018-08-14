@@ -2,15 +2,13 @@
   "name": "pl-element-blockly",
   "version": "0.16.0",
   "authors": [
-    "miguelgarcia",
-    "asanzo",
-    "rodri042"
+    "aguspina"
   ],
-  "description": "Element providing Blockly interface for Gobstones Web",
+  "description": "Element providing Blockly interface for Prolog lang",
   "keywords": [
     "web-component",
     "polymer",
-    "gobstones"
+    "prolog"
   ],
   "main": "pl-element-blockly.html",
   "license": "http://polymer.github.io/LICENSE.txt",
@@ -18,7 +16,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "blockly-package": "0.0.15",
-    "proceds-blockly": "GeniusDock/predicates-blockly#^0.1.13"
+    "proceds-blockly": "GeniusDock/predicates-blockly#^0.1.14"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

@@ -6,6 +6,7 @@ Blockly.PrologLanguage.blockIDAliases = {
   "FuncionesPrimitivas": "Funciones primitivas",
   "CategoriaAsignacion":"Asignación",
   "Color":"ColorSelector",
+  "Individuo":"IndividuoSelector",
   "Direccion":"DireccionSelector",
   "Numero":"math_number",
   "Booleano":"BoolSelector",

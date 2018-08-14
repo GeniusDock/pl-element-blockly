@@ -77,7 +77,6 @@ function callGenerator(name, args = [], newLine, order) {
  * Retorna la funcion que genera el codigo para un bloque tipo PRED(arg1, arg2, ...)
  */
 function predBlockCodeGenerator(procName, args, newLine) {
-  debugger;
 	return callGenerator(procName, args, true);
 }
 window.predBlockCodeGenerator = predBlockCodeGenerator;
@@ -102,7 +101,7 @@ function exprParamsBlockCodeGenerator(expr, args) {
  */
 function literalSelectorBlockCodeGenerator(type) {
 	return function(block) {
-		return [block.getFieldValue(type + 'Dropdown'), Blockly.PrologLanguage.ORDER_ATOMIC];
+		return [block.getFieldValue(type), Blockly.PrologLanguage.ORDER_ATOMIC];
 	};
 }
 
@@ -321,6 +320,7 @@ Blockly.PrologLanguage.ComandoCompletar = b => 'BOOM("El programa todavía no es
 Blockly.PrologLanguage.ExpresionCompletar = b => ['boom("El programa todavía no está completo")',Blockly.PrologLanguage.ORDER_FUNCTION_CALL];
 Blockly.PrologLanguage.AsociacionDeTeclaCompletar = b => ''
 
+Blockly.PrologLanguage.IndividuoSelector = literalSelectorBlockCodeGenerator('Individuo');
 Blockly.PrologLanguage.ColorSelector = literalSelectorBlockCodeGenerator('Color');
 Blockly.PrologLanguage.DireccionSelector = literalSelectorBlockCodeGenerator('Direccion');
 Blockly.PrologLanguage.BoolSelector = literalSelectorBlockCodeGenerator('Bool');
@@ -490,7 +490,7 @@ var formatCallName = function (name, capitalizeFirst, type = Blockly.PROCEDURE_C
 
 var makeParameterList = function (block) {
 	return block.arguments_
-		.map(arg => formatCallName(arg, false, Blockly.VARIABLE_CATEGORY_NAME))
+		.map(arg => formatCallName(arg, true, Blockly.VARIABLE_CATEGORY_NAME))
 		.join(', ');
 };
 
