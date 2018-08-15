@@ -7,6 +7,7 @@ Blockly.PrologLanguage.blockIDAliases = {
   "CategoriaAsignacion":"Asignación",
   "Color":"ColorSelector",
   "Individuo":"IndividuoSelector",
+  "Variable":"VariableSelector",
   "Direccion":"DireccionSelector",
   "Numero":"math_number",
   "Booleano":"BoolSelector",

@@ -99,9 +99,19 @@ function exprParamsBlockCodeGenerator(expr, args) {
 /**
  * Retorna la funcion que genera el codigo para un bloque tipo selector de literales
  */
+
 function literalSelectorBlockCodeGenerator(type) {
 	return function(block) {
 		return [block.getFieldValue(type), Blockly.PrologLanguage.ORDER_ATOMIC];
+	};
+}
+
+var individuoSelectorBlockCodeGenerator = literalSelectorBlockCodeGenerator;
+
+function variableSelectorBlockCodeGenerator(type) {
+	return function(block) {
+		debugger
+		return [block.getFieldValue(type).replace(/^\w/, c => c.toUpperCase()), Blockly.PrologLanguage.ORDER_ATOMIC];
 	};
 }
 
@@ -320,7 +330,8 @@ Blockly.PrologLanguage.ComandoCompletar = b => 'BOOM("El programa todavía no es
 Blockly.PrologLanguage.ExpresionCompletar = b => ['boom("El programa todavía no está completo")',Blockly.PrologLanguage.ORDER_FUNCTION_CALL];
 Blockly.PrologLanguage.AsociacionDeTeclaCompletar = b => ''
 
-Blockly.PrologLanguage.IndividuoSelector = literalSelectorBlockCodeGenerator('Individuo');
+Blockly.PrologLanguage.IndividuoSelector = individuoSelectorBlockCodeGenerator('Individuo');
+Blockly.PrologLanguage.VariableSelector = variableSelectorBlockCodeGenerator('Variable');
 Blockly.PrologLanguage.ColorSelector = literalSelectorBlockCodeGenerator('Color');
 Blockly.PrologLanguage.DireccionSelector = literalSelectorBlockCodeGenerator('Direccion');
 Blockly.PrologLanguage.BoolSelector = literalSelectorBlockCodeGenerator('Bool');

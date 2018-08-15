@@ -713,18 +713,19 @@ function createLiteralSelectorBlock(type,values){
 				message0: "%1",
 				args0: [{
 					type: "field_input",
-					name: "Individuo",
-					text: "unIndividuo"
+					name: type,
+					text: type
 				}],
 				output: "String",
 				colour: Blockly.CUSTOM_COLORS[`${type}Selector`] || Blockly.CUSTOM_COLORS.literalExpression,
-				tooltip: "Definí un individuo",
+				tooltip: `Definí  ${type}`,
 			});
 		}
 	};
 }
 
 Blockly.Blocks.IndividuoSelector = createLiteralSelectorBlock('Individuo');
+Blockly.Blocks.VariableSelector = createLiteralSelectorBlock('Variable');
 Blockly.Blocks.ColorSelector = createLiteralSelectorBlock('Color',['Rojo','Verde','Negro','Azul']);
 Blockly.Blocks.DireccionSelector = createLiteralSelectorBlock('Direccion',['Este','Oeste','Norte','Sur']);
 Blockly.Blocks.BoolSelector = createLiteralSelectorBlock('Bool',['True','False']);
