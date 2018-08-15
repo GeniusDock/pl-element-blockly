@@ -36,42 +36,19 @@ Example:
 
     <xml id="toolbox" style="display: none">
       <category name="Comandos">
-        <category name="Comandos primitivos">
           <block type="Poner"></block>
-          <block type="Sacar"></block>
-          <block type="Mover"></block>
-          <block type="IrAlBorde"></block>
-          <block type="VaciarTablero"></block>
-          <block type="BOOM"></block>
-        </category>
-        <category name="Procedimientos primitivos">
-        </category>
-        <category name="Mis procedimientos" custom="PROCEDURE_CALLS">
-        </category>
-        <category name="Asignación">
-          <block type="Asignacion"></block>
-        </category>
       </category>
-      <category name="Expresiones">
-        <category name="Literales">
-          <block type="math_number"></block>
-					<block type="IndividuoSelector"></block>
-        </category>
-        <category name="Operadores">
-          <block type="OperadorNumerico"></block>
-          <block type="OperadorDeComparacion"></block>
-          <block type="OperadorLogico"></block>
-          <block type="not"></block>
-					<block type="siguiente"></block>
-					<block type="previo"></block>
-					<block type="opuesto"></block>
-        </category>
+      <category name="Individuos y Variables">
+        <block type="IndividuoSelector"></block>
       </category>
-      <category name="Definiciones">
-        <category name="Procedimientos">
-          <block type="procedures_defnoreturnnoparams"></block>
-          <block type="procedures_defnoreturn"></block>
-        </category>
+      <category name="Mis predicados" custom="PROCEDURE_CALLS">
+      </category>
+      <category name="Predicados">
+        <block type="procedures_defnoreturnnoparams"></block>
+        <block type="procedures_defnoreturn"></block>
+      </category>
+      <category name="Asignación">
+        <block type="Asignacion"></block>
       </category>
     </xml>
   </template>
