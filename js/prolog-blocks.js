@@ -6,7 +6,36 @@ var CLEAN = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYEAYAAACw5+G7A
 /* global Blockly */
 
 Blockly.CUSTOM_COLORS = {"globalHsvSaturation":0.45,"globalHsvValue":0.65,"primitiveCommand":"#1d3c99","assignation":"#051d66","controlStructure":"#0f2b80","literalExpression":"#1d992c","primitiveExpression":"#1d992c","operator":"#0f801c","program":"#8d1bb3","interactiveProgram":"#6e158c","interactiveBinding":"#a11fcc","procedure":"#935ba6","function":"#745380","primitiveProcedure":"#2e4fb3","primitiveFunction":"#2eb33e","procedure_call":"#355bcc","function_call":"#35cc47","variable":"#056610","parameter":"#056610","complete":"#ff0000","H":{"commands":225,"expressions":127,"definitions":285},"S":{"assignation":95,"variable":95,"parameter":95,"primitiveCommand":81,"literalExpression":81,"primitiveExpression":81,"controlStructure":88,"operator":88,"procedure_call":74,"function_call":74,"primitiveProcedure":74,"primitiveFunction":74,"program":85,"interactiveProgram":85,"interactiveBinding":85,"procedure":45,"function":35,"complete":99},"V":{"assignation":40,"variable":40,"parameter":40,"primitiveCommand":60,"literalExpression":60,"primitiveExpression":60,"controlStructure":50,"operator":50,"procedure_call":80,"function_call":80,"primitiveProcedure":70,"primitiveFunction":70,"program":70,"interactiveProgram":55,"interactiveBinding":80,"procedure":65,"function":50,"complete":99}};
-
+Blockly.HSV_SATURATION = 0.64;
+Blockly.HSV_VALUE = 1;
+Blockly.MUMUKI_COLORS = {
+	pink: "#FF5C82",
+	blue: "#5CBEFF",
+	yellow: "#FFC95C"
+};
+// reserved
+Blockly.CUSTOM_COLORS.program = Blockly.MUMUKI_COLORS.pink;
+Blockly.CUSTOM_COLORS.interactiveProgram = Blockly.MUMUKI_COLORS.pink;
+Blockly.CUSTOM_COLORS.interactiveBinding = Blockly.MUMUKI_COLORS.pink;
+Blockly.CUSTOM_COLORS.procedure = Blockly.MUMUKI_COLORS.pink;
+Blockly.CUSTOM_COLORS.function = Blockly.MUMUKI_COLORS.pink;
+Blockly.CUSTOM_COLORS.complete = Blockly.MUMUKI_COLORS.pink;
+// commands
+Blockly.CUSTOM_COLORS.controlStructure = Blockly.MUMUKI_COLORS.yellow;
+Blockly.CUSTOM_COLORS.primitiveCommand = Blockly.MUMUKI_COLORS.yellow;
+Blockly.CUSTOM_COLORS.primitiveProcedure = Blockly.MUMUKI_COLORS.yellow;
+Blockly.CUSTOM_COLORS.procedure_call = Blockly.MUMUKI_COLORS.yellow;
+Blockly.CUSTOM_COLORS.assignation = Blockly.MUMUKI_COLORS.yellow;
+// expressions
+Blockly.Msg.MATH_HUE = Blockly.MUMUKI_COLORS.blue;
+Blockly.CUSTOM_COLORS.literalExpression = Blockly.MUMUKI_COLORS.blue;
+Blockly.CUSTOM_COLORS.primitiveExpression = Blockly.MUMUKI_COLORS.blue;
+Blockly.CUSTOM_COLORS.operator = Blockly.MUMUKI_COLORS.blue;
+Blockly.CUSTOM_COLORS.variable = Blockly.MUMUKI_COLORS.blue;
+Blockly.CUSTOM_COLORS.parameter = Blockly.MUMUKI_COLORS.blue;
+Blockly.CUSTOM_COLORS.primitiveFunction = Blockly.MUMUKI_COLORS.blue;
+Blockly.CUSTOM_COLORS.function_call = Blockly.MUMUKI_COLORS.blue;
+	
 /**
  * Create the svg representation of a block and render
  * @name {!string} name of the parameter.
