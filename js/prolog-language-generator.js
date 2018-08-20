@@ -113,7 +113,7 @@ function forallBlockCodeGenerator(procName, args, newLine) {
 		  sep = ', ';
 		});
 		code += newLine ? ').\n' : ').';
-		code = code.replace('.,', ',').replace('.)', ')');
+		code = code.replace(/\.,/g, ',').replace(/\.\)/g, ')');
 		return code;
 	  };
 	// return callGenerator(procName, args, true);
@@ -543,7 +543,7 @@ Blockly.PrologLanguage.procedures_defnoreturn = function (block) {
   }
   var body_lines = Blockly.PrologLanguage.statementToCode(block, 'STACK');
   var body2 = body_lines.split("\n").slice(1).join(",\n") + '.';
-  var body_final = body2.replace("..", ".").replace(".,", ",");
+  var body_final = body2.replace(/\.\./g, ".").replace(/\.,/g, ",");
 
   var code = name + '(' + makeParameterList(block) + ')' + ':- \n' + body_final + '\n'; 
 
@@ -609,6 +609,6 @@ Blockly.PrologLanguage.variables_get = function (block) {
 Blockly.PrologLanguage.Asignacion = function(block) {
   var varValue = Blockly.PrologLanguage.valueToCode(block, 'varValue', Blockly.PrologLanguage.ORDER_ASSIGNMENT);
   var code = formatCallName(block.getFieldValue('varName'),false,Blockly.VARIABLE_CATEGORY_NAME)  +
-  	' is ' + varValue + '\n';
-  return code;
+  	' is ' + varValue;
+  return "\n" + code;
 };
