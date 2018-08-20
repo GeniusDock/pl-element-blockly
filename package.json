@@ -1,7 +1,7 @@
 {
   "name": "pl-element-blockly",
   "version": "1.0.0",
-  "description": "Element providing Blockly interface for Gobstones Web",
+  "description": "Element providing Blockly interface for Prolog Lang",
   "main": "index.js",
   "directories": {
     "test": "test"
