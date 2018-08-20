@@ -1,0 +1,16 @@
+sudo: false
+language: node_js
+node_js:
+- 4.2.4
+script:
+- npm install -g bower && npm install -g vulcanize && bower install && ./build.sh
+- cd gem && ./bin/setup && bundle exec rake
+deploy:
+  provider: rubygems
+  skip_cleanup: true
+  api_key:
+    secure: d2da513a11559bfe5b3526c0187b72b7
+  gem: gobstones-blockly
+  on:
+    tags: true
+    repo: GeniusDock/pl-element-blockly
