@@ -542,21 +542,25 @@ Blockly.Blocks.AlternativaCompleta = {
 // Comandos:
 // ------------------------------------------------------
 
-Blockly.Blocks.Poner = {
+Blockly.Blocks.forall = {
 	init: function () {
 		this.jsonInit({
-			message0: 'Poner %1',
+			message0: 'ParaTodo %1 %2',
 			type: "Statement",
 			previousStatement: "Statement",
 			nextStatement: "Statement",
 			args0: [
 				{
-					type: 'input_value',
-					name: 'COLOR'
+					type: 'input_statement',
+					name: 'PrimeraCondicion'
+				},
+				{
+					type: 'input_statement',
+					name: 'SegundaCondicion'
 				}
 			],
-			colour: Blockly.CUSTOM_COLORS.Poner || Blockly.CUSTOM_COLORS.primitiveCommand,
-			tooltip: 'Poner color en casillero.',
+			colour: Blockly.CUSTOM_COLORS.ForAll || Blockly.CUSTOM_COLORS.primitiveCommand,
+			tooltip: 'Para todo lo primero, se cumple lo segundo.',
 			inputsInline: true
 		});
 	}
