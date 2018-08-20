@@ -542,6 +542,93 @@ Blockly.Blocks.AlternativaCompleta = {
 // Comandos:
 // ------------------------------------------------------
 
+Blockly.Blocks.fact1 = {
+	init: function () {
+		this.jsonInit({
+			message0: 'Verdad %1 %2',
+			type: "Statement",
+			previousStatement: "Statement",
+			nextStatement: "Statement",
+			args0: [
+				{
+					type: "field_input",
+					name: 'Nombre',
+					text: 'Nombre'
+				},	
+				{
+					type: 'input_value',
+					name: 'PrimerIndividuo'
+				}
+			],
+			colour: Blockly.CUSTOM_COLORS.Fact || Blockly.CUSTOM_COLORS.primitiveCommand,
+			tooltip: 'Es una verdad',
+			inputsInline: true
+		});
+	}
+};
+
+Blockly.Blocks.fact2 = {
+	init: function () {
+		this.jsonInit({
+			message0: 'Verdad %1 %2 %3',
+			type: "Statement",
+			previousStatement: "Statement",
+			nextStatement: "Statement",
+			args0: [
+				{
+					type: "field_input",
+					name: 'Nombre',
+					text: 'Nombre' 
+				},	
+				{
+					type: 'input_value',
+					name: 'PrimerIndividuo'
+				},
+				{
+					type: 'input_value',
+					name: 'SegundoIndividuo'
+				}
+			],
+			colour: Blockly.CUSTOM_COLORS.Fact || Blockly.CUSTOM_COLORS.primitiveCommand,
+			tooltip: 'Es una verdad',
+			inputsInline: true
+		});
+	}
+};
+
+Blockly.Blocks.fact3 = {
+	init: function () {
+		this.jsonInit({
+			message0: 'Verdad %1 %2 %3 %4',
+			type: "Statement",
+			previousStatement: "Statement",
+			nextStatement: "Statement",
+			args0: [
+				{
+					type: "field_input",
+					name: 'Nombre',
+					text: 'Nombre'
+				},	
+				{
+					type: 'input_value',
+					name: 'PrimerIndividuo'
+				},
+				{
+					type: 'input_value',
+					name: 'SegundoIndividuo'
+				},
+				{
+					type: 'input_value',
+					name: 'TerceraCondicion'
+				}
+			],
+			colour: Blockly.CUSTOM_COLORS.Fact || Blockly.CUSTOM_COLORS.primitiveCommand,
+			tooltip: 'Es una verdad',
+			inputsInline: true
+		});
+	}
+};
+
 Blockly.Blocks.forall = {
 	init: function () {
 		this.jsonInit({
@@ -566,7 +653,7 @@ Blockly.Blocks.forall = {
 	}
 };
 
-Blockly.Blocks.Sacar = {
+Blockly.Blocks.Sacar= {
 	init: function () {
 		this.jsonInit({
 			type: "Statement",

@@ -76,6 +76,22 @@ function callGenerator(name, args = [], newLine, order) {
 /**
  * Retorna la funcion que genera el codigo para un bloque tipo PRED(arg1, arg2, ...)
  */
+function factBlockCodeGenerator(procName, args, newLine) {
+	return function (block) {
+		var code = "\n" + block.getFieldValue('Nombre') + '(';
+		var sep = '';
+		args.forEach(function (arg, index) {
+		  var childBlock = block.childBlocks_[index]
+		  code += sep + childBlock.getFieldValue('Individuo');
+		  sep = ', ';
+		});
+		code += newLine ? ').\n' : ').';
+		return code;
+	  };
+	// return callGenerator(procName, args, true);
+}
+
+window.forallBlockCodeGenerator = forallBlockCodeGenerator;
 function forallBlockCodeGenerator(procName, args, newLine) {
 	return function (block) {
 		var code = "\n" + procName + '(';
@@ -320,6 +336,9 @@ Blockly.PrologLanguage.init = function () {
 	}
 };
 
+Blockly.PrologLanguage.fact1 = factBlockCodeGenerator('fact', ['PrimerIndividuo', 'SegundoIndividuo']);
+Blockly.PrologLanguage.fact2 = factBlockCodeGenerator('fact', ['PrimerIndividuo', 'SegundoIndividuo']);
+Blockly.PrologLanguage.fact3 = factBlockCodeGenerator('fact', ['PrimerIndividuo', 'SegundoIndividuo', 'TercerIndividuo']);
 Blockly.PrologLanguage.forall = forallBlockCodeGenerator('forall', ['PrimeraCondicion', 'SegundaCondicion']);
 
 Blockly.PrologLanguage.ComandoCompletar = b => 'BOOM("El programa todavía no está completo")\n';
