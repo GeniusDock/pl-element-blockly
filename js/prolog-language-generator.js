@@ -97,10 +97,16 @@ function forallBlockCodeGenerator(procName, args, newLine) {
 		var code = "\n" + procName + '(';
 		var sep = '';
 		args.forEach(function (arg) {
-		  code += sep + Blockly.PrologLanguage.statementToCode(block, arg, false).replace("\n", "");
+		  var statementCode = Blockly.PrologLanguage.statementToCode(block, arg, false);
+		  if(statementCode.split("\n").length > 2) {
+		  	code += sep + "(" + Blockly.PrologLanguage.statementToCode(block, arg, false).replace(/\n/g, "").replace(". ", ",") + ")";
+		  } else {
+		  	code += sep + statementCode.replace("\n", "");
+		  }
 		  sep = ', ';
 		});
 		code += newLine ? ').\n' : ').';
+		code = code.replace('.,', ',').replace('.)', ')');
 		return code;
 	  };
 	// return callGenerator(procName, args, true);
@@ -336,7 +342,7 @@ Blockly.PrologLanguage.init = function () {
 	}
 };
 
-Blockly.PrologLanguage.fact1 = factBlockCodeGenerator('fact', ['PrimerIndividuo', 'SegundoIndividuo']);
+Blockly.PrologLanguage.fact1 = factBlockCodeGenerator('fact', ['PrimerIndividuo']);
 Blockly.PrologLanguage.fact2 = factBlockCodeGenerator('fact', ['PrimerIndividuo', 'SegundoIndividuo']);
 Blockly.PrologLanguage.fact3 = factBlockCodeGenerator('fact', ['PrimerIndividuo', 'SegundoIndividuo', 'TercerIndividuo']);
 Blockly.PrologLanguage.forall = forallBlockCodeGenerator('forall', ['PrimeraCondicion', 'SegundaCondicion']);
