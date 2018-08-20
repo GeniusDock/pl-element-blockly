@@ -7,9 +7,8 @@ script:
 - cd gem && ./bin/setup && bundle exec rake
 deploy:
   provider: rubygems
-  skip_cleanup: true
   api_key:
-    secure: d2da513a11559bfe5b3526c0187b72b7
+    secure: 
   gem: prolog-blockly
   on:
     tags: true
