@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "gobstones/blockly"
+require "prolog/blockly"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

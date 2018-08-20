@@ -1,6 +1,6 @@
-require "gobstones/blockly/version"
+require "prolog/blockly/version"
 
-module Gobstones
+module Prolog
   module Blockly
     class Engine < ::Rails::Engine
     end if defined? ::Rails::Engine

@@ -1,5 +1,5 @@
-module Gobstones
+module Prolog
   module Blockly
-    VERSION = "0.16.0"
+    VERSION = "1.0.0"
   end
 end
