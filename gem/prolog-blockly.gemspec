@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/GeniusDock/pl-element-blockly"
   spec.license       = "MIT"
 
-  spec.files         = Dir["lib/**/*"] + Dir["app/**/*"] + ["Rakefile", "README.md"]
+  spec.files         = Dir["lib/**/*"] + Dir["app/**/*"] + ["Rakefile"]
   spec.test_files    = `git ls-files -- {test,spec}/*`.split("\n")
 
   spec.name          = "prolog-blockly"
