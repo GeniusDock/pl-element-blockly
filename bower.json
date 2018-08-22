@@ -16,9 +16,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "blockly-package": "0.0.15",
-    "proceds-blockly": "GeniusDock/predicates-blockly#^0.1.24",
-    "iron-icons": "^1.2.1",
-    "paper-fab": "^1.2.2"
+    "proceds-blockly": "GeniusDock/predicates-blockly#^0.1.24"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

@@ -667,7 +667,7 @@ Example:
             if(e.message.includes("nextConnection is null")){
               throw {
                 name: "BlockTypeError",
-                message: "There is at least one block type declared in the 'type' property of the block tag of the xml, which is incorrect or belongs to a block that is not in the Gobstones Language. Maybe you have forgotten any primitiveProcedure?",
+                message: "There is at least one block type declared in the 'type' property of the block tag of the xml, which is incorrect or belongs to a block that is not in the tonesobstones Language. Maybe you have forgotten any primitiveProcedure?",
                 toString: function(){ return this.name + ': ' + this.message; }
               };
             } else {
