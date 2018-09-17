@@ -795,10 +795,9 @@ Example:
           }
 				});
         var _this = this;
-       // this.workspace.addChangeListener(function (a, b, c) {
-       //   Blockly.Events.disableOrphans(a, b, c);
-       //   _this._onBlocklyWorkspaceUpdate();
-       // });
+        this.workspace.addChangeListener(function (a, b, c) {
+          _this._onBlocklyWorkspaceUpdate();
+        });
         this.resetWorkspace()
         this._onresize();
         if(window.jQuery !== undefined) {
