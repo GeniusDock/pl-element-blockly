@@ -76,7 +76,7 @@ function callGenerator(name, args = [], newLine, order) {
 
 function uncapitalize(text) {
 	if(!text || typeof text !== "string") {
-	   return ''; 
+	   return '';
 	}
 	return text.charAt(0).toLowerCase() + text.substr(1);
 }
@@ -120,6 +120,27 @@ function forallBlockCodeGenerator(procName, args, newLine) {
 }
 window.forallBlockCodeGenerator = forallBlockCodeGenerator;
 
+function notBlockCodeGenerator(procName, args, newLine) {
+	return function (block) {
+		var code = "\n" + procName + '(';
+		var sep = '';
+		debugger;
+		args.forEach(function (arg) {
+		  var statementCode = Blockly.PrologLanguage.statementToCode(block, arg, false);
+		  if(statementCode.split("\n").length > 2) {
+		  	code += sep + "(" + Blockly.PrologLanguage.statementToCode(block, arg, false).replace(/\n/g, "").replace(". ", ",") + ")";
+		  } else {
+		  	code += sep + statementCode.replace("\n", "");
+		  }
+		  sep = ', ';
+		});
+		code += newLine ? ').\n' : ').';
+		code = code.replace(/\.,/g, ',').replace(/\.\)/g, ')');
+		return code;
+	  };
+	// return callGenerator(procName, args, true);
+}
+window.forallBlockCodeGenerator = forallBlockCodeGenerator;
 /**
  * Retorna la funcion que genera el codigo para un bloque tipo function(arg1, arg2, ...)
  */
@@ -357,6 +378,7 @@ Blockly.PrologLanguage.fact1 = factBlockCodeGenerator('fact', ['PrimerIndividuo'
 Blockly.PrologLanguage.fact2 = factBlockCodeGenerator('fact', ['PrimerIndividuo', 'SegundoIndividuo']);
 Blockly.PrologLanguage.fact3 = factBlockCodeGenerator('fact', ['PrimerIndividuo', 'SegundoIndividuo', 'TercerIndividuo']);
 Blockly.PrologLanguage.forall = forallBlockCodeGenerator('forall', ['PrimeraCondicion', 'SegundaCondicion']);
+Blockly.PrologLanguage.not = notBlockCodeGenerator('not', ['PrimeraCondicion']);
 
 Blockly.PrologLanguage.ComandoCompletar = b => 'BOOM("El programa todavía no está completo")\n';
 Blockly.PrologLanguage.ExpresionCompletar = b => ['boom("El programa todavía no está completo")',Blockly.PrologLanguage.ORDER_FUNCTION_CALL];
@@ -415,7 +437,6 @@ Blockly.PrologLanguage.OperadorLogico = function(block) {
 	return [code, order];
 };
 
-Blockly.PrologLanguage.not = exprParamsBlockCodeGenerator('not',['VALUE']);
 Blockly.PrologLanguage.siguiente = exprParamsBlockCodeGenerator('siguiente',['VALUE']);
 Blockly.PrologLanguage.previo = exprParamsBlockCodeGenerator('previo',['VALUE']);
 Blockly.PrologLanguage.opuesto = exprParamsBlockCodeGenerator('opuesto',['VALUE']);
@@ -545,7 +566,7 @@ Blockly.PrologLanguage.procedures_defnoreturn = function (block) {
   var body2 = body_lines.split("\n").slice(1).join(",\n") + '.';
   var body_final = body2.replace(/\.\./g, ".").replace(/\.,/g, ",");
 
-  var code = name + '(' + makeParameterList(block) + ')' + ':- \n' + body_final + '\n'; 
+  var code = name + '(' + makeParameterList(block) + ')' + ':- \n' + body_final + '\n';
 
   code = Blockly.PrologLanguage.scrub_(block, code);
   Blockly.PrologLanguage.definitions_[procName] = code;
@@ -555,7 +576,7 @@ Blockly.PrologLanguage.procedures_defnoreturn = function (block) {
 
 Blockly.PrologLanguage.procedures_defnoreturn_nobody = function (block) {
   var name = formatCallName(block.getFieldValue('NAME'),false);
-  var code = name + '(' + makeParameterList(block) + ').'; 
+  var code = name + '(' + makeParameterList(block) + ').';
   code = Blockly.PrologLanguage.scrub_(block, code);
   Blockly.PrologLanguage.definitions_[name] = code;
   return null;

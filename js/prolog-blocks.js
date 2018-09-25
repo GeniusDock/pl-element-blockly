@@ -35,7 +35,7 @@ Blockly.CUSTOM_COLORS.variable = Blockly.MUMUKI_COLORS.blue;
 Blockly.CUSTOM_COLORS.parameter = Blockly.MUMUKI_COLORS.blue;
 Blockly.CUSTOM_COLORS.primitiveFunction = Blockly.MUMUKI_COLORS.blue;
 Blockly.CUSTOM_COLORS.function_call = Blockly.MUMUKI_COLORS.blue;
-	
+
 /**
  * Create the svg representation of a block and render
  * @name {!string} name of the parameter.
@@ -554,7 +554,7 @@ Blockly.Blocks.fact1 = {
 					type: "field_input",
 					name: 'Nombre',
 					text: 'Nombre'
-				},	
+				},
 				{
 					type: 'input_value',
 					name: 'PrimerIndividuo'
@@ -578,8 +578,8 @@ Blockly.Blocks.fact2 = {
 				{
 					type: "field_input",
 					name: 'Nombre',
-					text: 'Nombre' 
-				},	
+					text: 'Nombre'
+				},
 				{
 					type: 'input_value',
 					name: 'PrimerIndividuo'
@@ -608,7 +608,7 @@ Blockly.Blocks.fact3 = {
 					type: "field_input",
 					name: 'Nombre',
 					text: 'Nombre'
-				},	
+				},
 				{
 					type: 'input_value',
 					name: 'PrimerIndividuo'
@@ -624,6 +624,26 @@ Blockly.Blocks.fact3 = {
 			],
 			colour: Blockly.CUSTOM_COLORS.Fact || Blockly.CUSTOM_COLORS.primitiveCommand,
 			tooltip: 'Es una verdad',
+			inputsInline: true
+		});
+	}
+};
+
+Blockly.Blocks.not = {
+	init: function () {
+		this.jsonInit({
+			message0: 'No %1',
+			type: "Statement",
+			previousStatement: "Statement",
+			nextStatement: "Statement",
+			args0: [
+				{
+					type: 'input_statement',
+					name: 'PrimeraCondicion'
+				}
+			],
+			colour: Blockly.CUSTOM_COLORS.Not || Blockly.CUSTOM_COLORS.primitiveCommand,
+			tooltip: 'Niega la condición',
 			inputsInline: true
 		});
 	}
@@ -1071,7 +1091,6 @@ Blockly.Blocks.variables_get = {
 	}
 };
 
-Blockly.Blocks.not = createSingleParameterExpressionBlock('no','Bool');
 Blockly.Blocks.siguiente = createSingleParameterExpressionBlock('siguiente','*');
 Blockly.Blocks.previo = createSingleParameterExpressionBlock('previo','*');
 Blockly.Blocks.opuesto = createSingleParameterExpressionBlock('opuesto','*');
