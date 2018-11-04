@@ -174,7 +174,7 @@ function individuoSelectorBlockCodeGenerator(type) {
 
 function variableSelectorBlockCodeGenerator(type) {
 	return function(block) {
-		return [block.getFieldValue(type).replace(/^\w/, c => c.toUpperCase()), Blockly.PrologLanguage.ORDER_ATOMIC];
+		return [(block.getFieldValue(type)[0].toUpperCase() + block.getFieldValue(type).slice(1)), Blockly.PrologLanguage.ORDER_ATOMIC];
 	};
 }
 
