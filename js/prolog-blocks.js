@@ -11,7 +11,9 @@ Blockly.HSV_VALUE = 1;
 Blockly.MUMUKI_COLORS = {
 	pink: "#FF5C82",
 	blue: "#5CBEFF",
-	yellow: "#FFC95C"
+	yellow: "#FFC95C",
+	green: "#3FAA9D",
+	dark_green:"#1F879A"
 };
 // reserved
 Blockly.CUSTOM_COLORS.program = Blockly.MUMUKI_COLORS.pink;
@@ -25,16 +27,19 @@ Blockly.CUSTOM_COLORS.controlStructure = Blockly.MUMUKI_COLORS.yellow;
 Blockly.CUSTOM_COLORS.primitiveCommand = Blockly.MUMUKI_COLORS.yellow;
 Blockly.CUSTOM_COLORS.primitiveProcedure = Blockly.MUMUKI_COLORS.yellow;
 Blockly.CUSTOM_COLORS.procedure_call = Blockly.MUMUKI_COLORS.yellow;
-Blockly.CUSTOM_COLORS.assignation = Blockly.MUMUKI_COLORS.yellow;
+Blockly.CUSTOM_COLORS.assignation = Blockly.MUMUKI_COLORS.dark_green;
+
 // expressions
 Blockly.Msg.MATH_HUE = Blockly.MUMUKI_COLORS.blue;
 Blockly.CUSTOM_COLORS.literalExpression = Blockly.MUMUKI_COLORS.blue;
 Blockly.CUSTOM_COLORS.primitiveExpression = Blockly.MUMUKI_COLORS.blue;
 Blockly.CUSTOM_COLORS.operator = Blockly.MUMUKI_COLORS.blue;
-Blockly.CUSTOM_COLORS.variable = Blockly.MUMUKI_COLORS.blue;
+Blockly.CUSTOM_COLORS.VariableSelector = Blockly.MUMUKI_COLORS.green;
 Blockly.CUSTOM_COLORS.parameter = Blockly.MUMUKI_COLORS.blue;
 Blockly.CUSTOM_COLORS.primitiveFunction = Blockly.MUMUKI_COLORS.blue;
 Blockly.CUSTOM_COLORS.function_call = Blockly.MUMUKI_COLORS.blue;
+Blockly.CUSTOM_COLORS.Not = Blockly.MUMUKI_COLORS.dark_green;
+Blockly.CUSTOM_COLORS.ForAll = Blockly.MUMUKI_COLORS.dark_green;
 
 /**
  * Create the svg representation of a block and render
